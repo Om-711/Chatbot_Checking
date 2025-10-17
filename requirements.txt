@@ -1,0 +1,17 @@
+fastapi
+uvicorn
+langchain
+langchain-core
+langchain-community
+langchain-google-genai
+google-generativeai
+sentence-transformers
+faiss-cpu
+pandas
+numpy
+fuzzywuzzy
+scikit-learn
+scipy
+python-dotenv
+pymongo
+python-multipart
