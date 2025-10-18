@@ -8,7 +8,7 @@ from langchain.chains import LLMChain
 from langchain.memory import ConversationBufferMemory
 from fastapi.middleware.cors import CORSMiddleware
 import os
-# from langchain_community.embeddings import SentenceTransformerEmbeddings
+from langchain_community.embeddings import SentenceTransformerEmbeddings
 from pydantic import BaseModel
 import pandas as pd
 from pymongo import MongoClient
@@ -144,8 +144,8 @@ combined_text = products.to_string() + "\n" + users.to_string()
 splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
 chunks = splitter.create_documents([combined_text])
 
-embeddings = GoogleGenerativeAIEmbeddings(model="models/gemini-embedding-001")
-# embeddings = SentenceTransformerEmbeddings(model_name="all-MiniLM-L6-v2")
+# embeddings = GoogleGenerativeAIEmbeddings(model="models/gemini-embedding-001")
+embeddings = SentenceTransformerEmbeddings(model_name="all-MiniLM-L6-v2")
 
 vector_store = None
 if vector_store is None:
@@ -275,6 +275,7 @@ async def chat(user_id: str, option: str):
 async def chat_ai_endpoint(user_id: str, question: str):
     resp = await chat_ai_async(user_id, question)
     return JSONResponse(resp)
+
 
 
 
