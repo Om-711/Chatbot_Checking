@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.responses import JSONResponse
 from langchain_core.prompts import PromptTemplate
 from langchain_community.vectorstores import FAISS
-from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_google_genai import GoogleGenerativeAIEmbeddings, ChatGoogleGenerativeAI
 from langchain.chains import LLMChain
 from langchain.memory import ConversationBufferMemory
@@ -275,3 +275,4 @@ async def chat(user_id: str, option: str):
 async def chat_ai_endpoint(user_id: str, question: str):
     resp = await chat_ai_async(user_id, question)
     return JSONResponse(resp)
+
