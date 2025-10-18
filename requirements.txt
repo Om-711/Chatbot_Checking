@@ -34,3 +34,5 @@ requests>=2.32.3
 
 # Optional but recommended for deployment stability
 python-dotenv>=1.0.1
+
+sentence-transformers>=3.0.1
