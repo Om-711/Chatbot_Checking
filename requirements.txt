@@ -1,10 +1,18 @@
-fastapi
-uvicorn
-langchain
-langchain-core
-langchain-community
-langchain-google-genai
+# core framework
+fastapi>=0.100.0
+uvicorn[standard]
+
+# LangChain + Google Gemini integration
+langchain>=0.3.0
+langchain-core>=0.3.0
+langchain-google-genai>=2.1.0
+
+# pydantic v2 (LangChain now prefers Pydantic v2)
+pydantic>=2.7.0,<3.0.0
+
+# other libs you use
 google-generativeai
+langchain-community
 faiss-cpu
 pandas
 numpy
@@ -12,4 +20,3 @@ fuzzywuzzy
 python-dotenv
 pymongo
 python-multipart
-
